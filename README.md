@@ -1,3 +1,34 @@
+# Bronwyn Taljaard's project
+
+# What I did:
+
+- Make it look really nice:  
+I added a gradient to the background and a new font which I incorporated from Google Fonts. I updated headings by making them bigger. I also aded a new UI component, called Card, which I wrapped around each "step" in the user flow. I styled this card in its own css file.
+
+- Let users pick from multiple (custom) stickers:  
+I added more sticker options for users to choose from.
+
+- Improve the workflow and ux:  
+By wrapping each step of the user flow in its own card, users can easily see where in the flow they are and where to go next. Bigger headings also add to this.
+
+- Organize, document and test the code:  
+After seeing that the initial commit of the assesment repo used "conventional commits" I installed a library so I can ensure my commit messages follow this convention.  
+I added a new folder for the slap images, for the UI components (card) and components. Due to time limits, I was only able to put step one of the user flow into its own component, which I then added back into the main app.
+
+# What I would do next if I had more time:
+
+- Organize, document and test the code, improve UX:  
+I started with creating a component for step 2 of the user flow and incorporated it into the main app. However, once clicking on the slap icons, the app crashed. If I had more time, I would like to investigate further to fix this. Thereafter, I would also put step 3 and 4 of the user flow into their own components. Once each step was in its own componets, I would create a type of caorusel for users to move through each of the steps in the user flow, which would be more interesting and visually apprealling than just scrolling through the steps.
+
+- Show multiple captured images in a gallery:  
+I would like to investigate how to save the data of the pictures taken into an array. Right now, the pictures taken are displayed, but once the user clicks somewhere else, they disappear. From here, I would want to display them in a gallery. From here, a user could potentially download the images or share them on social media.
+
+- Organize, document and test the code:  
+I would like to investigate how to use unit tests to test each of the components individually to verify behaviour.
+
+***
+
+# ORIGINAL Devtest Readme
 # Devtest Readme
 
 Hello candidate, Welcome to our little dev test. The goal of this exercise, is to asses your general skill level, and give us something to talk about at our next appointment.
