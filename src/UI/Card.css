@@ -1,0 +1,14 @@
+.card {
+  border-radius: 5px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  background-color: #2266dd;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 85%;
+  margin: auto;
+}
+
+.card > h3 {
+  font-size: 1rem;
+}

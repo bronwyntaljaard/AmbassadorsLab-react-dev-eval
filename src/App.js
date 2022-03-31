@@ -6,56 +6,100 @@ import logo from "./slap.png";
 
 import { Link, Switch, Route, Redirect } from "react-router-dom";
 
+import Card from "./UI/Card";
+
 const useStyles = createUseStyles((theme) => ({
   "@global body": {
     background: theme.palette.background,
     color: theme.palette.text,
-    fontFamily: "sans-serif",
+    fontFamily: "Poppins",
   },
 
   App: {
-    padding: "20px",
-    background: theme.palette.primary,
+    padding: "1.5rem",
+    background: theme.palette.gradient,
     maxWidth: "800px",
     minHeight: "600px",
     margin: "auto",
+    borderRadius: "4px",
     "& a": {
       color: theme.palette.text,
+      textDecoration: "none",
+    },
+    "& a:hover": {
+      textDecoration: "underline",
+    },
+    "& h2": {
+      fontSize: "1.5rem",
+      textAlign: "center",
+      lineHeight: "2rem",
     },
   },
   Header: {
+    paddingLeft: "4rem",
+    paddingRight: "4rem",
     "&  h1": {
-      fontFamily: "sans-serif",
+      fontFamily: "Poppins",
       cursor: "pointer",
-      fontSize: "4rem",
+      fontSize: "6rem",
+      textAlign: "center",
+      marginTop: "1.5rem",
+      padding: 0,
+    },
+    "& nav": {
+      fontSize: "1rem",
+      textAlign: "center",
+    },
+    "& ul": {
+      listStyleType: "none",
+      display: "flex",
+      justifyContent: "flex-end",
+      alignContent: "center",
+      textDecoration: "none",
+    },
+    "& li": {
+      padding: "0px 10px",
     },
   },
   Main: {
-    background: theme.palette.secondary,
-
+    // background: theme.palette.secondary,
     "& canvas": {
       width: "100%",
       height: "auto",
+      flexBasis: "100%",
     },
     "& video": {
       display: "none",
     },
   },
   Stickers: {
+    padding: "2rem",
     "& img": {
       height: "4rem",
     },
+    "& button": {
+      marginLeft: "1rem",
+    },
   },
   Gallery: {
+    padding: "2rem",
+    margin: "auto",
+    display: "flex",
     "& img": {
       height: "16rem",
+    },
+    "& input": {
+      borderRadius: "4px",
+      marginLeft: "1rem",
+      display: "inline",
     },
   },
   Picture: {
     background: "black",
-    padding: 4,
+    padding: "4rem",
     position: "relative",
     display: "inline-block",
+    margin: "auto",
     "& h3": {
       padding: 8,
       textAlign: "center",
@@ -89,11 +133,6 @@ function App(props) {
   return (
     <div className={classes.App}>
       <header className={classes.Header}>
-        <h1>SlapSticker</h1>
-        <p>
-          Have you ever said something so dumb, you just wanted to slap
-          yourself? Well now you can!
-        </p>
         <nav>
           <ul>
             <li>
@@ -104,43 +143,57 @@ function App(props) {
             </li>
           </ul>
         </nav>
+        <h1>SlapSticker</h1>
+        <h2>
+          Have you ever said something so dumb, you just wanted to slap
+          yourself? Well now you can!
+        </h2>
       </header>
       <Switch>
         /** * Main app route */
         <Route path="/" exact>
           <main>
             <section className={classes.Gallery}>
-              Step one: Give it a name
-              <input
-                type="text"
-                value={title}
-                onChange={(ev) => setTitle(ev.target.value)}
-              />
+              <Card>
+                <h3>Step one: Give it a name</h3>
+                <input
+                  type="text"
+                  value={title}
+                  onChange={(ev) => setTitle(ev.target.value)}
+                />
+              </Card>
             </section>
             <section className={classes.Stickers}>
-              Step 2: select your sticker...
-              <button onClick={() => setSticker(stickers[0])}>
-                <img src={stickers[0].url} />
-              </button>
+              <Card>
+                <h3>Step two: Select your sticker</h3>
+                <button onClick={() => setSticker(stickers[0])}>
+                  <img src={stickers[0].url} />
+                </button>
+              </Card>
             </section>
             <section className={classes.Main}>
-              Step three: Slap your self!
-              <video ref={handleVideoRef} />
-              <canvas
-                ref={handleCanvasRef}
-                width={2}
-                height={2}
-                onClick={handleCapture}
-              />
+              <Card>
+                <h3>Step three: Slap yourself!</h3>
+                <br></br>
+                <video ref={handleVideoRef} />
+                <canvas
+                  ref={handleCanvasRef}
+                  width={2}
+                  height={2}
+                  onClick={handleCapture}
+                />
+              </Card>
             </section>
             <section className={classes.Gallery}>
-              Step 4: Cherish this moment forever
-              {picture && (
-                <div className={classes.Picture}>
-                  <img src={picture.dataUri} />
-                  <h3>{picture.title}</h3>
-                </div>
-              )}
+              <Card>
+                <h3>Step four: Cherish this moment forever</h3>
+                {picture && (
+                  <div className={classes.Picture}>
+                    <img src={picture.dataUri} />
+                    <h3>{picture.title}</h3>
+                  </div>
+                )}
+              </Card>
             </section>
           </main>
         </Route>
