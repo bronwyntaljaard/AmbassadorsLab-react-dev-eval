@@ -13,6 +13,7 @@ import slapImage7 from "./slap_images/slap.png";
 import { Link, Switch, Route, Redirect } from "react-router-dom";
 
 import Card from "./UI/Card";
+import Step1GiveName from "./components/Step1GiveName";
 
 const useStyles = createUseStyles((theme) => ({
   "@global body": {
@@ -168,14 +169,7 @@ function App(props) {
         <Route path="/" exact>
           <main>
             <section className={classes.Gallery}>
-              <Card>
-                <h3>Step one: Give it a name</h3>
-                <input
-                  type="text"
-                  value={title}
-                  onChange={(ev) => setTitle(ev.target.value)}
-                />
-              </Card>
+              <Step1GiveName title={title}></Step1GiveName>
             </section>
             <section className={classes.Stickers}>
               <Card>
