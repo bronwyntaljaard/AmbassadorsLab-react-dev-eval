@@ -14,6 +14,7 @@ import { Link, Switch, Route, Redirect } from "react-router-dom";
 
 import Card from "./UI/Card";
 import Step1GiveName from "./components/Step1GiveName";
+import Step2SelectSticker from "./components/Step2SelectSticker";
 
 const useStyles = createUseStyles((theme) => ({
   "@global body": {
@@ -194,7 +195,7 @@ function App(props) {
                 </button>
                 <button onClick={() => setSticker(stickers[6])}>
                   <img src={stickers[6].url} />
-                </button>
+                </button>{" "}
               </Card>
             </section>
             <section className={classes.Main}>
