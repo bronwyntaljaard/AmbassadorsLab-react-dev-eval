@@ -2,7 +2,13 @@ import { useState } from "react";
 import { createUseStyles } from "react-jss";
 import { useWebcamCapture } from "./useWebcamCapture";
 // import logo from './logo.svg'
-import logo from "./slap.png";
+import slapImage1 from "./slap_images/facepalm-outline.png";
+import slapImage2 from "./slap_images/facepalm-smiley.png";
+import slapImage3 from "./slap_images/fish-slap.png";
+import slapImage4 from "./slap_images/line-slap.png";
+import slapImage5 from "./slap_images/ouch.png";
+import slapImage6 from "./slap_images/punch.png";
+import slapImage7 from "./slap_images/slap.png";
 
 import { Link, Switch, Route, Redirect } from "react-router-dom";
 
@@ -108,7 +114,15 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const stickers = [logo].map((url) => {
+const stickers = [
+  slapImage1,
+  slapImage2,
+  slapImage3,
+  slapImage4,
+  slapImage5,
+  slapImage6,
+  slapImage7,
+].map((url) => {
   const img = document.createElement("img");
   img.src = url;
   return { img, url };
@@ -168,6 +182,24 @@ function App(props) {
                 <h3>Step two: Select your sticker</h3>
                 <button onClick={() => setSticker(stickers[0])}>
                   <img src={stickers[0].url} />
+                </button>
+                <button onClick={() => setSticker(stickers[1])}>
+                  <img src={stickers[1].url} />
+                </button>
+                <button onClick={() => setSticker(stickers[2])}>
+                  <img src={stickers[2].url} />
+                </button>
+                <button onClick={() => setSticker(stickers[3])}>
+                  <img src={stickers[3].url} />
+                </button>
+                <button onClick={() => setSticker(stickers[4])}>
+                  <img src={stickers[4].url} />
+                </button>
+                <button onClick={() => setSticker(stickers[5])}>
+                  <img src={stickers[5].url} />
+                </button>
+                <button onClick={() => setSticker(stickers[6])}>
+                  <img src={stickers[6].url} />
                 </button>
               </Card>
             </section>
